@@ -10,7 +10,8 @@ public class Main {
         System.out.println("PrimeSieve");
         System.out.println("----------");
         System.out.println("\n" + "Bitte geben Sie jetzt die Obergrenze ein!");
-        EratosthenesPrimeSieve sieve = new EratosthenesPrimeSieve(s.nextInt());
+        int upperLimit = s.nextInt();
+        EratosthenesPrimeSieve sieve = new EratosthenesPrimeSieve(upperLimit);
         int option = 0;
         while(option!=4)
         {
@@ -28,13 +29,19 @@ public class Main {
                 System.out.println("-------------------------------------------");
                 System.out.println("Bitte geben Sie jetzt die Zahl, bei der Sie wissen wollen ob sie eine Primzahl ist, ein!");
                 int zahl = s.nextInt();
-                if(sieve.isPrime(zahl))
+                if(zahl<=upperLimit)
                 {
-                    System.out.println(zahl + " ist eine Primzahl!");
-                }else
-                {
-                    System.out.println(zahl + " ist keine Primzahl!");
+                    if(sieve.isPrime(zahl))
+                    {
+                        System.out.println(zahl + " ist eine Primzahl!");
+                    }else
+                    {
+                        System.out.println(zahl + " ist keine Primzahl!");
+                    }
+                }else{
+                    System.out.println("Die Zahl muss kleiner oder gleich wie die Obergranze sein!");
                 }
+
 
             }else if(option == 2)
             {
