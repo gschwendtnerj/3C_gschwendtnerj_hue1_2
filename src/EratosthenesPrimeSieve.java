@@ -62,9 +62,10 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     public void printEvenNumberWithPrimeSum() {
         int primeNumber1;
         int primeNumber2;
-        boolean doBreak = false;
-        for(int i = 4; i<UPPER_LIMIT;i++)
+        boolean doBreak;
+        for(int i = 4; i<=UPPER_LIMIT;i++)
         {
+            doBreak = false;
             if(i%2==0)
             {
                 var primes = getPrimes(i);
@@ -80,11 +81,12 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
                             doBreak = true;
                             break;
                         }
+                        if(doBreak)
+                        {
+                            break;
+                        }
                     }
-                    if(doBreak)
-                    {
-                        break;
-                    }
+
                 }
             }
         }

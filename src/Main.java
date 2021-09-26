@@ -12,14 +12,15 @@ public class Main {
         System.out.println("\n" + "Bitte geben Sie jetzt die Obergrenze ein!");
         EratosthenesPrimeSieve sieve = new EratosthenesPrimeSieve(s.nextInt());
         int option = 0;
-        while(option!=3)
+        while(option!=4)
         {
 
             System.out.println("----------" + "\n");
             System.out.println("Optionen:");
             System.out.println("1... überprüft ob eine bestimmte Zahl eine Primzahl ist");
             System.out.println("2... gibt alle Primzahlen bis zur Obergrenze aus");
-            System.out.println("3... beendet das Programm");
+            System.out.println("3... gibt alle geraden natürlichen Zahlen und ihre Summe aus zwei Primzahlen bis zur Obergrenze aus");
+            System.out.println("4... beendet das Programm");
 
             option = s.nextInt();
             if(option == 1)
@@ -40,7 +41,11 @@ public class Main {
                 System.out.println("-------------------------------------------");
                 sieve.printPrimes();
 
-            }else if(option!=3){
+            }else if(option == 3)
+            {
+                System.out.println("-------------------------------------------");
+                sieve.printEvenNumberWithPrimeSum();
+            }else if(option!=4){
                 System.out.println(option + " ist keine gültige Option");
             }
 
