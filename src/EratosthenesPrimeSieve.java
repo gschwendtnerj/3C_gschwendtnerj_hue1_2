@@ -60,11 +60,32 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public void printEvenNumberWithPrimeSum() {
+        int primeNumber1;
+        int primeNumber2;
+        boolean doBreak = false;
         for(int i = 4; i<UPPER_LIMIT;i++)
         {
             if(i%2==0)
             {
                 var primes = getPrimes(i);
+                for(int index2 = 0; index2 < primes.size();index2++)
+                {
+                    primeNumber1 = primes.get(index2);
+                    for(int index3 = 0; index3 < primes.size();index3++)
+                    {
+                        primeNumber2 = primes.get(index3);
+                        if(i == (primeNumber1 + primeNumber2))
+                        {
+                            System.out.println(i + " summe: " + i + " = " + primeNumber1 + " + " + primeNumber2);
+                            doBreak = true;
+                            break;
+                        }
+                    }
+                    if(doBreak)
+                    {
+                        break;
+                    }
+                }
             }
         }
     }
